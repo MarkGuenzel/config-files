@@ -1,0 +1,105 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+        "os": "#ACB0BE",
+        "pink": "#F5BDE6",
+        "lavender": "#B7BDF8",
+        "blue":  "#8AADF4",
+        "wight": "#FFFFFF",
+        "text": "#494D64",
+        "red": "#EB4747"
+  },
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "p:wight",        
+          "template": "({{ .Venv }}) "
+        },
+        {
+          "background": "p:blue",
+          "foreground": "p:wight",
+          "powerline_symbol": "\ue0b4",
+          "leading_diamond": "\ue0b6",
+          "style": "diamond",
+          "template": "{{.Icon}} ",
+          "type": "os"
+        },
+        {
+          "background": "p:blue",
+          "foreground": "p:text",
+          "powerline_symbol": "\ue0b4",
+          "style": "diamond",
+          "template": "{{.UserName}}",
+          "type": "session"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4 ",
+          "background": "p:blue",
+          "foreground": "p:text",
+          "properties": {
+            "home_icon": "\ueb06",
+            "folder_icon": "..",
+            "style": "agnoster_short",
+            "max_depth": 3,
+            "mapped_locations_enabled": true,
+            "mapped_locations": {
+              "C:\\Dev\\Projects": ""
+            }
+          },
+          "template": "\ue5ff {{ .Path }}"
+        },
+        {
+          "background": "p:pink",
+          "foreground": "p:text",
+          "style": "powerline",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "cherry_pick_icon": "\ue29b ",
+            "commit_icon": "\uf417 ",
+            "fetch_status": false,
+            "fetch_upstream_icon": false,
+            "merge_icon": "\ue727 ",
+            "no_commits_icon": "\uf0c3 ",
+            "rebase_icon": "\ue728 ",
+            "revert_icon": "\uf0e2 ",
+            "tag_icon": "\uf412 "
+          },
+          "powerline_symbol": "\ue0b4",
+          "template": " {{ .HEAD }}",
+          "type": "git"
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:lavender",
+          "foreground": "p:text",
+          "properties": {
+            "always_enabled": false
+          },
+          "template": " \ueba2 {{ .FormattedMs }}"
+        },
+        {
+          "type": "status",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b4",
+          "background": "p:red",
+          "foreground": "#000000",
+          "properties": {
+            "always_enabled": false
+          },
+          "template": " \uea6c Code: {{.Code}}"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 2
+}
